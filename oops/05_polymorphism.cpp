@@ -100,6 +100,9 @@ public:
     {
         Subject = subject;
     }
+    ~Teacher(){
+        cout<<"Destructor is called"<<endl;
+    }
     void prepareLesson()
     {
         cout << Name << " is preparing " << Subject << " lesson" << endl;
@@ -107,6 +110,7 @@ public:
     void work() {
         cout<<Name <<" is teaching "<<Subject<<endl;
     }
+    
 };
 
 int main()

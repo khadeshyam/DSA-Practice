@@ -8,13 +8,13 @@ public: // everything inside class is private by default in C++
     string Company;
     int Age;
 
-    // constructor (type - 1)
-    Employee(string name, int age, string company)
-    {
-        Name = name;
-        Age = age;
-        Company = company;
-    }
+    // // constructor (type - 1)
+    // Employee(string name, int age, string company)
+    // {
+    //     Name = name;
+    //     Age = age;
+    //     Company = company;
+    // }
 
     // constructor (type - 2 using this keyword)
     Employee(string name, int age, string company)
@@ -34,9 +34,9 @@ public: // everything inside class is private by default in C++
 
 int main()
 {
-    Employee employee1 = Employee("shyam", 19, "sokas");
-    employee1.introduceYourself();
+    Employee* employee1 = new Employee("shyam", 19, "sokas");
+    employee1->introduceYourself();
 
-    Employee employee2 = Employee("Ritesg", 17, "koias");
-    employee2.introduceYourself();
+    Employee* employee2 = new Employee("Ritesg", 17, "koias");
+    employee2->introduceYourself();
 }

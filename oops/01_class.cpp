@@ -3,30 +3,32 @@ using namespace std;
 
 class Employee
 {
-public: // everything in C++ class is private by default
-    string name;
-    string company;
-    int age;
+public: // everything inside class is private by default in C++
+    string Name;
+    string Company;
+    int Age;
+
+    // constructor (type - 1)
+    Employee(string name, int age, string company)
+    {
+        Name = name;
+        Age = age;
+        Company = company;
+    }
 
     void introduceYourself()
     {
-        cout << "Name - " << name << endl;
-        cout << "Age - " << age << endl;
-        cout << "Company - " << company << endl;
+        cout << "Name - " << Name << endl;
+        cout << "Age - " << Age << endl;
+        cout << "Company - " << Company << endl;
     }
 };
 
 int main()
 {
-    Employee employee1;
-    employee1.name = "Shyam";
-    employee1.company = "Shyam dev";
-    employee1.age = 19;
+    Employee employee1 = Employee("shyam", 19, "sokas");
     employee1.introduceYourself();
 
-    Employee employee2;
-    employee2.name = "Ritesh";
-    employee2.company = "Ritesh dev";
-    employee2.age = 17;
+    Employee employee2 = Employee("Ritesg", 17, "koias");
     employee2.introduceYourself();
 }

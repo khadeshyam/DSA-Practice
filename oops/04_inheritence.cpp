@@ -5,13 +5,12 @@ using namespace std;
 class AbstractEmployee
 {
     virtual void askForPromotion() = 0; // pure virtual function or abstract function
-    //if a class inherits this class it is a mandatory for that class to have implemetation for the virtual function   other wise errors 
-  
+    // if a class inherits this class it is a mandatory for that class to have implemetation for the virtual function   other wise errors
 };
 
 class Employee : AbstractEmployee
 {
-protected: //makes child class inherit this protected variables
+protected: // makes child class inherit this protected variables
     string Name;
     string Company;
     int Age;
@@ -59,35 +58,57 @@ public:
         cout << "Age - " << Age << endl;
         cout << "Company - " << Company << endl;
     }
-     void askForPromotion(){
-           if(Age > 30){
-            cout<<Name << " got promoted!"<<endl;
-           }else{
-            cout<<Name << " sorry no promotion for you"<<endl;
-           }
-     }
+    void askForPromotion()
+    {
+        if (Age > 30)
+        {
+            cout << Name << " got promoted!" << endl;
+        }
+        else
+        {
+            cout << Name << " sorry no promotion for you" << endl;
+        }
+    }
 };
 
-class Developer: public Employee{
-    public:
-      string FavProgrammingLanguage;
-      Developer(string name, int age, string company,string language) :Employee(name,age,company) {
-         FavProgrammingLanguage = language;
-      }
+class Developer : public Employee
+{
+public:
+    string FavProgrammingLanguage;
+    Developer(string name, int age, string company, string language) : Employee(name, age, company)
+    {
+        FavProgrammingLanguage = language;
+    }
 
-      void fixBug(){
-        cout<<Name<<" fixes bugs using "<<FavProgrammingLanguage<<endl;
-      }
+    void fixBug()
+    {
+        cout << Name << " fixes bugs using " << FavProgrammingLanguage << endl;
+    }
+};
+
+class Teacher : public Employee
+{
+public:
+    string Subject;
+    Teacher(string name, int age, string company, string subject) : Employee(name, age, company)
+    {
+        subject = Subject;
+    }
+    void prepareLesson()
+    {
+        cout << Name << " is preparing " << Subject << " lesson" << endl;
+    }
 };
 
 int main()
 {
-    Developer d =  Developer ("shyam",19,"shyamdev","cpp");
+    Developer d = Developer("shyam", 19, "shyamdev", "cpp");
     d.fixBug();
     d.fixBug();
     d.fixBug();
-    d.introduceYourself();
-    
-    
+    d.askForPromotion();
 
+    Teacher t = Teacher("jack", 35, "coolskool", "history");
+    t.prepareLesson();
+    t.askForPromotion();
 }

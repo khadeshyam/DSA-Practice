@@ -11,7 +11,7 @@ class AbstractEmployee
 
 class Employee : AbstractEmployee
 {
-private:
+protected: //makes child class inherit this protected variables
     string Name;
     string Company;
     int Age;
@@ -68,7 +68,7 @@ public:
      }
 };
 
-class Developer: Employee{
+class Developer: public Employee{
     public:
       string FavProgrammingLanguage;
       Developer(string name, int age, string company,string language) :Employee(name,age,company) {
@@ -76,7 +76,7 @@ class Developer: Employee{
       }
 
       void fixBug(){
-        cout<<getName()<<" fixes bugs using "<<FavProgrammingLanguage;
+        cout<<Name<<" fixes bugs using "<<FavProgrammingLanguage<<endl;
       }
 };
 
@@ -84,6 +84,9 @@ int main()
 {
     Developer d =  Developer ("shyam",19,"shyamdev","cpp");
     d.fixBug();
+    d.fixBug();
+    d.fixBug();
+    d.introduceYourself();
     
     
 

@@ -16,6 +16,14 @@ public: // everything inside class is private by default in C++
         Company = company;
     }
 
+    // constructor (type - 2 using this keyword)
+    Employee(string name, int age, string company)
+    {
+        this->Name = name;
+        this->Age = age;
+        this->Company = company;
+    }
+
     void introduceYourself()
     {
         cout << "Name - " << Name << endl;

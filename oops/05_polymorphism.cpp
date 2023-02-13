@@ -30,7 +30,6 @@ public:
     {
         return Name;
     }
-
     void setAge(int age)
     {
         if (age >= 18)
@@ -42,7 +41,6 @@ public:
     {
         return Age;
     }
-
     void setCompany(string company)
     {
         Name = company;
@@ -69,6 +67,10 @@ public:
             cout << Name << " sorry no promotion for you" << endl;
         }
     }
+     
+    virtual void work(){
+        cout<<Name <<" is checking email , task backlog "<<endl;
+    }
 };
 
 class Developer : public Employee
@@ -84,6 +86,10 @@ public:
     {
         cout << Name << " fixes bugs using " << FavProgrammingLanguage << endl;
     }
+
+    void work() {
+        cout<<Name <<" is writing code in "<<FavProgrammingLanguage<<endl;
+    }
 };
 
 class Teacher : public Employee
@@ -98,17 +104,21 @@ public:
     {
         cout << Name << " is preparing " << Subject << " lesson" << endl;
     }
+    void work() {
+        cout<<Name <<" is teaching "<<Subject<<endl;
+    }
 };
 
 int main()
 {
-    Developer d = Developer("shyam", 19, "shyamdev", "cpp");
-    d.fixBug();
-    d.fixBug();
-    d.fixBug();
-    d.askForPromotion();
-
+    Developer d = Developer("shyam", 19, "shyamdev", "c++");
     Teacher t = Teacher("jack", 35, "coolskool", "history");
-    t.prepareLesson();
-    t.askForPromotion();
+    
+    Employee* e1 = &d;
+    Employee* e2 = &t;
+
+    e1 -> work();
+    e2 -> work();
+
+    
 }

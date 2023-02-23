@@ -14,10 +14,11 @@ int main(){
          cin>>arr[i];
     }
 
-    int currSum = 0;
+    
     int maxSum = INT_MIN;
 
     for(int i = 1; i < n; i++){
+        int currSum = 0;
         for(int j = i; j < n;j++){
              currSum+=arr[j];
              maxSum = max(maxSum,currSum);

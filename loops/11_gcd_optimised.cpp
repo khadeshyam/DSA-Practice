@@ -1,24 +1,20 @@
-#include<iostream>
-#include<math.h>
-
+#include <iostream>
 using namespace std;
-int main(){
-    int n1,n2;
-    cin>>n1>>n2;
-    // n1 , n2 => [1,INT_MAX] handle other edge cases seperately
-
-    int gcd = 1;
-    int rem = 0;
+int main(int argc, char **argv){
+    int num1, num2;
+    cin >> num1 >> num2;
+    int on1 = num1 , on2 = num2 ,gcd = 1,lcm = 1, rem = 0;
     
-
-    while( n2 % n1 ){
-       rem = n2 % n1;
-       n2 = n1;
-       n1 = rem;
+    while(num2 % num1){
+        rem = num2 % num1;
+        num2 = num1;
+        num1 = rem;
     }
-  
-    gcd = n1;
-
-   cout<<gcd<<endl;
-   
+    
+    gcd = num1;
+    lcm = (on1 * on2) / gcd;
+    
+    cout<<gcd<<endl;
+    cout<<lcm<<endl;
+    
 }
